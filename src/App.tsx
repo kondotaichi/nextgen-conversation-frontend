@@ -65,7 +65,7 @@ function App() {
 
   const analyzeSpeech = async (text: string) => {
     try {
-      const response = await axios.post('http://127.0.0.1:8000/analyze', { text });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/analyze`, { text });
       const { corrected_text, explanation } = response.data;
 
       // corrected_textやexplanationが異なる場合や補足説明が含まれていればポップアップを表示
